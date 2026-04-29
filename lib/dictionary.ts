@@ -462,41 +462,41 @@ export const dictionary = {
 
 finalCta: {
   eyebrow: {
-    en: "Next Step",
-    ar: "الخطوة التالية",
-    fr: "Étape suivante",
+    en: "Let's talk",
+    ar: "لنتحدث",
+    fr: "Parlons-en",
   },
   title: {
     before: {
-      en: "Ready to move",
-      ar: "هل أنت مستعد",
-      fr: "Prêt à aller",
+      en: "Ready to build something",
+      ar: "جاهز",
+      fr: "Prêt à construire quelque chose de",
     },
     glow: {
-      en: "forward",
-      ar: "للانطلاق",
-      fr: "de l’avant",
+      en: "strong",
+      ar: "لبناء شيء قوي",
+      fr: "solide",
     },
     after: {
-      en: "with partnership?",
-      ar: "في الشراكة؟",
-      fr: "avec le partenariat ?",
+      en: "together?",
+      ar: "معنا؟",
+      fr: "ensemble ?",
     },
   },
   text: {
-    en: "Take the next step with a clearer structure, stronger direction, and a model built for growth.",
-    ar: "خذ الخطوة التالية مع هيكل أوضح واتجاه أقوى ونموذج مصمم للنمو.",
-    fr: "Passez à l’étape suivante avec une structure plus claire, une direction plus forte et un modèle conçu pour la croissance.",
+    en: "If the opportunity feels right, reach out on the channel you prefer and we'll help you take the next step clearly.",
+    ar: "إذا بدت لك الفرصة مناسبة، تواصل معنا عبر القناة التي تفضلها وسنساعدك على بدء الخطوة التالية بشكل واضح.",
+    fr: "Si l'opportunité vous parle, contactez-nous sur le canal qui vous convient et nous vous aiderons à avancer simplement.",
   },
   telegramCta: {
-    en: "Telegram",
-    ar: "تيليجرام",
-    fr: "Telegram",
+    en: "Talk on Telegram",
+    ar: "تواصل عبر تيليجرام",
+    fr: "Parler sur Telegram",
   },
   whatsappCta: {
-    en: "WhatsApp",
-    ar: "واتساب",
-    fr: "WhatsApp",
+    en: "Chat on WhatsApp",
+    ar: "تواصل عبر واتساب",
+    fr: "Discuter sur WhatsApp",
   },
 },
 

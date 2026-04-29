@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { FadeUp } from "@/app/partnership/components/Reveal";
+import { FadeUp } from "@/app/motion/Reveal";
 
 export default function SectionHeading({
   eyebrow,

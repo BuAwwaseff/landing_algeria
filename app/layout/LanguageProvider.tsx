@@ -4,8 +4,7 @@ import {
   createContext,
   useContext,
   useEffect,
-  useMemo,
-  useState,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
 import { dictionary, type Language } from "@/lib/dictionary";
@@ -19,19 +18,58 @@ type LanguageContextValue = {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
+function isStoredLanguage(value: string | null): value is Language {
+  return value === "en" || value === "ar" || value === "fr";
+}
+
+const languageListeners = new Set<() => void>();
+
+function getStoredLanguage(): Language {
+  if (typeof window === "undefined") {
+    return "en";
+  }
+
+  const savedLanguage = window.localStorage.getItem("site-language");
+  return isStoredLanguage(savedLanguage) ? savedLanguage : "en";
+}
+
+function subscribeToLanguage(callback: () => void) {
+  languageListeners.add(callback);
+
+  if (typeof window === "undefined") {
+    return () => {
+      languageListeners.delete(callback);
+    };
+  }
+
+  const handleStorage = (event: StorageEvent) => {
+    if (event.key === null || event.key === "site-language") {
+      callback();
+    }
+  };
+
+  window.addEventListener("storage", handleStorage);
+
+  return () => {
+    languageListeners.delete(callback);
+    window.removeEventListener("storage", handleStorage);
+  };
+}
+
+function notifyLanguageListeners() {
+  languageListeners.forEach((listener) => listener());
+}
+
 export default function LanguageProvider({
   children,
 }: {
   children: ReactNode;
 }) {
-  const [language, setLanguageState] = useState<Language>("en");
-
-  useEffect(() => {
-    const saved = window.localStorage.getItem("site-language");
-    if (saved === "en" || saved === "ar" || saved === "fr") {
-      setLanguageState(saved);
-    }
-  }, []);
+  const language = useSyncExternalStore<Language>(
+    subscribeToLanguage,
+    getStoredLanguage,
+    () => "en",
+  );
 
   useEffect(() => {
     window.localStorage.setItem("site-language", language);
@@ -40,24 +78,24 @@ export default function LanguageProvider({
   }, [language]);
 
   const setLanguage = (nextLanguage: Language) => {
-    setLanguageState(nextLanguage);
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    window.localStorage.setItem("site-language", nextLanguage);
+    notifyLanguageListeners();
   };
 
   const toggleLanguage = () => {
-    setLanguageState((current) =>
-      current === "en" ? "ar" : current === "ar" ? "fr" : "en"
-    );
+    setLanguage(language === "en" ? "ar" : language === "ar" ? "fr" : "en");
   };
 
-  const value = useMemo(
-    () => ({
-      language,
-      setLanguage,
-      toggleLanguage,
-      t: dictionary,
-    }),
-    [language]
-  );
+  const value: LanguageContextValue = {
+    language,
+    setLanguage,
+    toggleLanguage,
+    t: dictionary,
+  };
 
   return (
     <LanguageContext.Provider value={value}>

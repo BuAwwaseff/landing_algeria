@@ -3,14 +3,16 @@ import HowItWorksSection from "./components/HowItWorksSection";
 import WhyUs from "./components/WhyUs";
 import FinalCtaSection from "./components/FinalCTASection";
 import PathsSection from "./components/PathsSection";
+import BenefitsSection from "./components/BenefitsSection";
 export default function PartnershipPage() {
   return (
-    <main className="flex flex-col">
+    <div className="flex flex-col">
       <HeroSection />
+      <BenefitsSection />
       <HowItWorksSection />
       <WhyUs />
       <PathsSection/>
       <FinalCtaSection/>
-    </main>
+    </div>
   );
 }

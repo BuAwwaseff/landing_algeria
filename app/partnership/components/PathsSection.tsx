@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef, useState, type MouseEvent, type ReactNode } from "react";
 import { PathCardProps } from "@/lib/types";
 import { useLanguage } from "@/app/layout/LanguageProvider";
-import { FadeUp, StaggerReveal } from "./Reveal";
+import { FadeUp, StaggerReveal } from "@/app/motion/Reveal";
 import SectionHeading from "@/app/layout/SectionHeading";
 
 function InteractiveSurface({
@@ -221,6 +221,13 @@ function PathCard({
 export default function PathsSection() {
   const { language, t } = useLanguage();
   const isArabic = language === "ar";
+  const title = (
+    <>
+      {t.paths.title.before[language]}{" "}
+      <span className="glow-green">{t.paths.title.glow[language]}</span>{" "}
+      {t.paths.title.after[language]}
+    </>
+  );
 
   return (
     <section id="paths" className="relative px-6 py-16 sm:px-8 lg:px-12">
@@ -228,7 +235,7 @@ export default function PathsSection() {
         <StaggerReveal amount={0.16}>
           <SectionHeading
             eyebrow={t.paths.eyebrow[language]}
-            title={t.paths.title[language]}
+            title={title}
             text={t.paths.text[language]}
           />
 
@@ -241,7 +248,7 @@ export default function PathsSection() {
                 cta={t.paths.agent.cta[language]}
                 ctaHref="#final-cta"
                 secondaryCta={t.paths.agent.secondaryCta[language]}
-                secondaryHref="#how-it-works"
+                secondaryHref="#steps"
                 primaryLabel={isArabic ? "نسبة الوكيل" : "Agent rate"}
                 primaryValue="5%–10%"
                 secondaryLabel={isArabic ? "نوع الصفقة" : "Deal type"}
@@ -267,7 +274,7 @@ export default function PathsSection() {
                 cta={t.paths.partner.cta[language]}
                 ctaHref="#final-cta"
                 secondaryCta={t.paths.partner.secondaryCta[language]}
-                secondaryHref="#how-it-works"
+                secondaryHref="#steps"
                 primaryLabel={isArabic ? "نسبة الشريك" : "Partner rate"}
                 primaryValue="25%–35%"
                 secondaryLabel={isArabic ? "الخيارات" : "Options"}

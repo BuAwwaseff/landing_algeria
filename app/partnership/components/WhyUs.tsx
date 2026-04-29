@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/app/layout/LanguageProvider";
-import { FadeUp, StaggerReveal } from "./Reveal";
+import { FadeUp, StaggerReveal } from "@/app/motion/Reveal";
 
 function CountUp({
   end,
@@ -369,7 +369,7 @@ export default function WhyUs() {
   };
 
   return (
-    <section id="why-us" className="relative px-6 py-16 sm:px-8 lg:px-12">
+    <section id="tools" className="relative px-4 py-14 sm:px-8 sm:py-16 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <StaggerReveal amount={0.14}>
           <div className="mx-auto max-w-3xl text-center">
