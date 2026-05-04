@@ -12,116 +12,96 @@ export const dictionary = {
       ar: "الشراكة",
       fr: "Partenariat",
     },
-    language: {
-      en: "Language",
-      ar: "اللغة",
-      fr: "Langue",
-    },
-    english: {
-      en: "EN",
-      ar: "EN",
-      fr: "EN",
-    },
-    arabic: {
-      en: "AR",
-      ar: "AR",
-      fr: "AR",
-    },
   },
 
   hero: {
     eyebrow: {
-      en: "Become our partner",
-      ar: "أصبح شريكنا",
-      fr: "Devenez notre partenaire",
-    },
-    heroCTA: {
-      en: "Become a partner of a growing company, with global reach and an expanding market",
-      ar: "أصبح شريكًا لشركة نامية، بوصول عالمي وسوق متوسع",
-      fr: "Devenez partenaire d’une entreprise en croissance, avec une portée mondiale et un marché en expansion",
+      en: "Partnership",
+      ar: "الشراكة",
+      fr: "Partenariat",
     },
     text: {
-      en: "A cleaner partnership model designed to present the offer clearly, build trust faster, and turn mobile attention into action.",
-      ar: "نموذج شراكة أوضح مصمم لعرض الفرصة بشكل أفضل، وبناء الثقة بشكل أسرع، وتحويل اهتمام المستخدم على الهاتف إلى خطوة فعلية.",
-      fr: "Un modèle de partenariat plus clair, conçu pour présenter l’offre efficacement, instaurer la confiance plus rapidement et transformer l’attention mobile en action.",
+      en: "Choose the route that fits you: promote with a private code, or support players locally with deposits, withdrawals, and direct follow-up.",
+      ar: "اختر المسار الذي يناسبك: روّج بكود خاص، أو ادعم اللاعبين محلياً عبر الإيداع والسحب والمتابعة المباشرة.",
+      fr: "Choisissez la voie qui vous correspond: promouvoir avec un code prive, ou accompagner les joueurs localement pour les depots, retraits et le suivi direct.",
     },
     primaryCta: {
-      en: "Join now",
-      ar: "انضم الآن",
-      fr: "Rejoindre",
+      en: "Talk to a manager",
+      ar: "تحدث مع المدير",
+      fr: "Parler au manager",
     },
     secondaryCta: {
-      en: "See how it works",
-      ar: "كيفية العمل",
-      fr: "Voir comment ça marche",
+      en: "See the routes",
+      ar: "شاهد المسارات",
+      fr: "Voir les voies",
     },
     before: {
-      en: "Become a partner with",
-      ar: "كن شريكًا مع",
-      fr: "Devenez partenaire avec",
+      en: "Build with",
+      ar: "ابدأ مع",
+      fr: "Avancez avec",
     },
     glowOne: {
-      en: "global",
-      ar: "انتشار",
-      fr: "une portée mondiale",
+      en: "local reach",
+      ar: "وصول محلي",
+      fr: "une audience locale",
     },
     middle: {
-      en: "reach and",
-      ar: "عالمي و",
+      en: "and a",
+      ar: "و",
       fr: "et un",
     },
     glowTwo: {
-      en: "growing potential",
-      ar: "نمو مستمر",
-      fr: "potentiel en croissance",
+      en: "clear earning path",
+      ar: "مسار ربح واضح",
+      fr: "parcours de gains clair",
     },
     cards: {
       earn: {
         title: {
-          en: "Earn",
-          ar: "اكسب",
-          fr: "Gagnez",
+          en: "Promote",
+          ar: "روّج",
+          fr: "Promouvoir",
         },
         text: {
-          en: "Create real movement through a clear structure built to support stronger results over time.",
-          ar: "اصنع حركة حقيقية عبر هيكل واضح مصمم لدعم نتائج أقوى مع الوقت.",
-          fr: "Créez une vraie dynamique grâce à une structure claire conçue pour renforcer les résultats dans le temps.",
+          en: "Bring players from your audience with a private promo code and ready campaign tools.",
+          ar: "اجلب لاعبين من جمهورك عبر كود ترويجي خاص وأدوات جاهزة للحملات.",
+          fr: "Attirez des joueurs depuis votre audience avec un code promo prive et des outils de campagne deja prets.",
         },
       },
       grow: {
         title: {
-          en: "Grow",
-          ar: "تطوّر",
-          fr: "Développez-vous",
+          en: "Track",
+          ar: "تابع",
+          fr: "Suivre",
         },
         text: {
-          en: "Build confidence, gain momentum, and move forward with a more structured partnership model.",
-          ar: "اكتسب الثقة والزخم، وتقدّم عبر نموذج شراكة أكثر تنظيمًا.",
-          fr: "Gagnez en confiance, en élan, et avancez avec un modèle de partenariat plus structuré.",
+          en: "Follow clicks, signups, and player activity through clear weekly reporting.",
+          ar: "تابع الضغطات والتسجيلات ونشاط اللاعبين عبر تقارير أسبوعية واضحة.",
+          fr: "Suivez les clics, inscriptions et activite des joueurs avec des rapports hebdomadaires clairs.",
         },
       },
       build: {
         title: {
-          en: "Build",
-          ar: "اصنع",
-          fr: "Construisez",
+          en: "Support",
+          ar: "ادعم",
+          fr: "Accompagner",
         },
         text: {
-          en: "Build a stronger long-term path with clearer direction, better flow, and wider potential.",
-          ar: "اصنع مسارًا أقوى على المدى الطويل مع اتجاه أوضح وتدفق أفضل وإمكانات أوسع.",
-          fr: "Construisez un parcours plus solide sur le long terme avec une direction plus claire, un meilleur flux et un potentiel plus large.",
+          en: "Get direct help from a manager for onboarding, setup, and follow-up when you need it.",
+          ar: "احصل على دعم مباشر من مدير مختص في البداية والإعداد والمتابعة عند الحاجة.",
+          fr: "Recevez l'aide directe d'un manager pour le demarrage, la mise en place et le suivi.",
         },
       },
       trust: {
         title: {
-          en: "Trust",
-          ar: "الثقة",
-          fr: "Confiance",
+          en: "Scale",
+          ar: "توسّع",
+          fr: "Developper",
         },
         text: {
-          en: "Present the offer with a cleaner and more serious experience that helps users move with confidence.",
-          ar: "اعرض الفرصة عبر تجربة أنظف وأكثر جدية تساعد المستخدم على التقدم بثقة.",
-          fr: "Présentez l’offre avec une expérience plus propre et plus sérieuse qui aide les utilisateurs à avancer avec confiance.",
+          en: "Choose Partner or Agent based on your traffic, your city, and your payment access.",
+          ar: "اختر مسار الشريك أو الوكيل حسب جمهورك ومدينتك وقدرتك على إدارة الدفع.",
+          fr: "Choisissez la voie Partner ou Agent selon votre trafic, votre ville et votre acces aux paiements.",
         },
       },
     },
@@ -129,31 +109,31 @@ export const dictionary = {
 
   paths: {
     eyebrow: {
-      en: "Choose Your Path",
+      en: "Choose your route",
       ar: "اختر مسارك",
       fr: "Choisissez votre voie",
     },
     title: {
       before: {
-        en: "Two clear ways to move",
-        ar: "طريقان واضحان",
-        fr: "Deux voies claires pour",
+        en: "Pick the",
+        ar: "اختر",
+        fr: "Choisissez la",
       },
       glow: {
-        en: "forward",
-        ar: "للمضي قدمًا",
-        fr: "avancer",
+        en: "route",
+        ar: "الطريق",
+        fr: "voie",
       },
       after: {
-        en: "",
-        ar: "",
-        fr: "",
+        en: "that fits you",
+        ar: "التي تناسبك",
+        fr: "qui vous convient",
       },
     },
     text: {
-      en: "Choose the path that fits your goals, your pace, and the way you want to grow with us.",
-      ar: "اختر المسار الذي يناسب أهدافك، وإيقاعك، والطريقة التي تريد أن تنمو بها معنا.",
-      fr: "Choisissez le chemin qui correspond à vos objectifs, à votre rythme et à la manière dont vous voulez évoluer avec nous.",
+      en: "Promote to your audience as a Partner, or work locally as an Agent handling player transactions and support.",
+      ar: "روّج لجمهورك كشريك، أو اعمل محلياً كوكيل يدير تعاملات اللاعبين والدعم المباشر.",
+      fr: "Promouvez aupres de votre audience comme Partner, ou travaillez localement comme Agent pour les transactions et le support des joueurs.",
     },
     agent: {
       side: {
@@ -162,47 +142,67 @@ export const dictionary = {
         fr: "Agent",
       },
       title: {
-        en: "Start faster with a direct local path",
-        ar: "ابدأ أسرع عبر مسار محلي مباشر",
-        fr: "Commencez plus vite avec une voie locale directe",
+        en: "Handle local player deposits, withdrawals, and direct support",
+        ar: "ادِر إيداعات اللاعبين وسحوباتهم والدعم المباشر محلياً",
+        fr: "Gerez localement les depots, retraits et le support direct des joueurs",
       },
       text: {
-        en: "Best for people who want a more active role, direct involvement, and a faster operational start.",
-        ar: "الأنسب لمن يريد دورًا أكثر نشاطًا، ومشاركة مباشرة، وانطلاقة تشغيلية أسرع.",
-        fr: "Idéal pour ceux qui veulent un rôle plus actif, une implication directe et un démarrage opérationnel plus rapide.",
+        en: "If you can manage local transactions in your city or country, you can become the point of contact players trust for deposits, withdrawals, and quick follow-up.",
+        ar: "إذا كنت تستطيع إدارة التعاملات المحلية في مدينتك أو بلدك، يمكنك أن تكون نقطة الاتصال التي يثق بها اللاعبون للإيداع والسحب والمتابعة السريعة.",
+        fr: "Si vous pouvez gerer les transactions locales dans votre ville ou votre pays, vous pouvez devenir le contact de confiance des joueurs pour les depots, retraits et le suivi rapide.",
       },
       cta: {
-        en: "Become an Agent",
-        ar: "كن وكيلًا",
-        fr: "Devenir agent",
+        en: "Start as an Agent",
+        ar: "ابدأ كوكيل",
+        fr: "Commencer comme Agent",
       },
       secondaryCta: {
-        en: "How It Works",
-        ar: "كيف يعمل",
-        fr: "Fonctionnement",
+        en: "See onboarding",
+        ar: "شاهد خطوات البدء",
+        fr: "Voir le demarrage",
+      },
+      summaryPrimaryLabel: {
+        en: "Work focus",
+        ar: "طبيعة العمل",
+        fr: "Focus",
+      },
+      summaryPrimaryValue: {
+        en: "Local deposits and withdrawals",
+        ar: "إيداع وسحب محلي",
+        fr: "Depots et retraits locaux",
+      },
+      summarySecondaryLabel: {
+        en: "Terms",
+        ar: "الشروط",
+        fr: "Conditions",
+      },
+      summarySecondaryValue: {
+        en: "Based on city, volume, and payment flow",
+        ar: "تختلف حسب المدينة والحجم وطريقة الدفع",
+        fr: "Selon la ville, le volume et le flux de paiement",
       },
       pointA: {
         title: {
-          en: "Direct activity",
-          ar: "نشاط مباشر",
-          fr: "Activité directe",
+          en: "Local payment role",
+          ar: "دور دفع محلي",
+          fr: "Role de paiement local",
         },
         text: {
-          en: "Take part in day-to-day movement, coordination, and direct execution.",
-          ar: "شارك في الحركة اليومية، والتنسيق، والتنفيذ المباشر.",
-          fr: "Participez au mouvement quotidien, à la coordination et à l’exécution directe.",
+          en: "Help players use the payment methods that fit your area.",
+          ar: "ساعد اللاعبين على استخدام طرق الدفع المناسبة لمنطقتك.",
+          fr: "Aidez les joueurs a utiliser les moyens de paiement adaptes a votre zone.",
         },
       },
       pointB: {
         title: {
-          en: "Faster start",
-          ar: "بداية أسرع",
-          fr: "Démarrage rapide",
+          en: "Direct player support",
+          ar: "دعم مباشر للاعبين",
+          fr: "Support direct",
         },
         text: {
-          en: "Move with a simpler structure and begin building results from day one.",
-          ar: "تحرك ضمن هيكل أبسط وابدأ في بناء النتائج منذ اليوم الأول.",
-          fr: "Avancez avec une structure plus simple et commencez à construire des résultats dès le premier jour.",
+          en: "Stay close to deposits, withdrawals, and quick player questions.",
+          ar: "ابق قريباً من الإيداع والسحب وأسئلة اللاعبين السريعة.",
+          fr: "Restez proche des depots, retraits et questions rapides des joueurs.",
         },
       },
     },
@@ -213,47 +213,67 @@ export const dictionary = {
         fr: "Partenaire",
       },
       title: {
-        en: "Build a stronger network with long-term potential",
-        ar: "ابنِ شبكة أقوى بإمكانات طويلة المدى",
-        fr: "Construisez un réseau plus solide avec un potentiel à long terme",
+        en: "Promote with a private code and grow your audience income",
+        ar: "روّج بكود خاص ووسّع عائدك من الجمهور",
+        fr: "Promouvez avec un code prive et developpez vos revenus d'audience",
       },
       text: {
-        en: "Best for people who want broader growth, stronger structure, and more room to scale over time.",
-        ar: "الأنسب لمن يريد نموًا أوسع، وهيكلًا أقوى، ومساحة أكبر للتوسع مع الوقت.",
-        fr: "Idéal pour ceux qui veulent une croissance plus large, une structure plus solide et davantage de capacité à évoluer avec le temps.",
+        en: "If you have traffic, a community, or a content channel, you can bring players with a private promo code and track performance with manager support.",
+        ar: "إذا كان لديك جمهور أو زيارات أو قناة محتوى، يمكنك جلب اللاعبين عبر كود خاص ومتابعة الأداء مع دعم من مدير مختص.",
+        fr: "Si vous avez du trafic, une communaute ou un canal de contenu, vous pouvez attirer des joueurs avec un code promo prive et suivre la performance avec l'aide d'un manager.",
       },
       cta: {
-        en: "Become a Partner",
-        ar: "كن شريكًا",
-        fr: "Devenir partenaire",
+        en: "Start as a Partner",
+        ar: "ابدأ كشريك",
+        fr: "Commencer comme Partenaire",
       },
       secondaryCta: {
-        en: "How It Works",
-        ar: "كيف يعمل",
-        fr: "Fonctionnement",
+        en: "See onboarding",
+        ar: "شاهد خطوات البدء",
+        fr: "Voir le demarrage",
+      },
+      summaryPrimaryLabel: {
+        en: "Work focus",
+        ar: "طبيعة العمل",
+        fr: "Focus",
+      },
+      summaryPrimaryValue: {
+        en: "Traffic, audience, and promotion",
+        ar: "زيارات وجمهور وترويج",
+        fr: "Trafic, audience et promotion",
+      },
+      summarySecondaryLabel: {
+        en: "Deal options",
+        ar: "خيارات الاتفاق",
+        fr: "Options",
+      },
+      summarySecondaryValue: {
+        en: "Revshare, CPA, or hybrid deals",
+        ar: "ريف شير أو CPA أو اتفاق هجين",
+        fr: "Revshare, CPA ou accord hybride",
       },
       pointA: {
         title: {
-          en: "Scalable growth",
-          ar: "نمو قابل للتوسع",
-          fr: "Croissance évolutive",
+          en: "Promo code and tracking",
+          ar: "كود ترويجي وتتبع",
+          fr: "Code promo et suivi",
         },
         text: {
-          en: "Grow through a broader structure with stronger long-term potential.",
-          ar: "انمُ عبر هيكل أوسع وإمكانات أقوى على المدى الطويل.",
-          fr: "Développez-vous grâce à une structure plus large avec un potentiel plus fort sur le long terme.",
+          en: "Use a private code and follow clicks, signups, and player activity.",
+          ar: "استخدم كوداً خاصاً وتابع الضغطات والتسجيلات ونشاط اللاعبين.",
+          fr: "Utilisez un code prive et suivez clics, inscriptions et activite des joueurs.",
         },
       },
       pointB: {
         title: {
-          en: "Network strength",
-          ar: "قوة الشبكة",
-          fr: "Force du réseau",
+          en: "Marketing support",
+          ar: "دعم تسويقي",
+          fr: "Support marketing",
         },
         text: {
-          en: "Build wider reach, stronger connections, and deeper momentum over time.",
-          ar: "حقق انتشارًا أوسع، وروابط أقوى، وزخمًا أكبر مع الوقت.",
-          fr: "Construisez une portée plus large, des connexions plus fortes et un élan plus profond au fil du temps.",
+          en: "Get banners, campaign materials, and help from an affiliate manager.",
+          ar: "احصل على بانرات ومواد للحملات ومساندة من مدير الشراكات.",
+          fr: "Recevez bannières, materiels de campagne et accompagnement d'un manager.",
         },
       },
     },
@@ -261,32 +281,32 @@ export const dictionary = {
 
   howItWorks: {
     eyebrow: {
-      en: "How It Works",
-      ar: "الخطوات",
-      fr: "Fonctionnement",
+      en: "How to start",
+      ar: "كيف تبدأ",
+      fr: "Comment commencer",
     },
     title: {
       before: {
-        en: "A simple",
-        ar: "مسار",
-        fr: "Un",
+        en: "Start in",
+        ar: "ابدأ عبر",
+        fr: "Commencez en",
       },
       glow: {
-        en: "path",
-        ar: "بسيط",
-        fr: "chemin",
+        en: "three steps",
+        ar: "ثلاث خطوات",
+        fr: "trois etapes",
       },
       after: {
-        en: "to get started",
-        ar: "للبدء",
-        fr: "simple pour commencer",
+        en: "",
+        ar: "واضحة",
+        fr: "claires",
       },
     },
     visuals: {
       step: {
         en: "Step",
         ar: "خطوة",
-        fr: "Étape",
+        fr: "Etape",
       },
       agent: {
         en: "Agent",
@@ -301,7 +321,7 @@ export const dictionary = {
       activity: {
         en: "Activity",
         ar: "النشاط",
-        fr: "Activité",
+        fr: "Activite",
       },
       live: {
         en: "Live",
@@ -310,9 +330,9 @@ export const dictionary = {
       },
     },
     text: {
-      en: "The process is clear from the start. You join, begin moving with the system, and grow based on your activity and results.",
-      ar: "الخطوات واضحة من البداية. تنضم، تبدأ العمل مع النظام، وتنمو بناءً على نشاطك ونتائجك.",
-      fr: "Le processus est clair dès le départ. Vous rejoignez, vous commencez à avancer avec le système, puis vous évoluez selon votre activité et vos résultats.",
+      en: "Talk to the manager, choose the route that fits you, then begin with the tools and support you need.",
+      ar: "تواصل مع المدير، اختر المسار المناسب لك، ثم ابدأ بالأدوات والدعم الذي تحتاجه.",
+      fr: "Parlez au manager, choisissez la voie qui vous correspond, puis commencez avec les outils et le support dont vous avez besoin.",
     },
     steps: {
       first: {
@@ -322,14 +342,14 @@ export const dictionary = {
           fr: "01",
         },
         title: {
-          en: "Join the partnership",
-          ar: "انضم إلى الشراكة",
-          fr: "Rejoignez le partenariat",
+          en: "Contact us and choose your route",
+          ar: "تواصل معنا واختر مسارك",
+          fr: "Contactez-nous et choisissez votre voie",
         },
         text: {
-          en: "Start with a clear entry point and a structure designed to help you move quickly.",
-          ar: "ابدأ من نقطة دخول واضحة وهيكل مصمم ليساعدك على التحرك بسرعة.",
-          fr: "Commencez avec un point d’entrée clair et une structure pensée pour vous aider à avancer rapidement.",
+          en: "Start with a direct conversation to decide whether Partner or Agent fits you best.",
+          ar: "ابدأ بمحادثة مباشرة لتعرف هل يناسبك مسار الشريك أم الوكيل.",
+          fr: "Commencez par un echange direct pour savoir si la voie Partner ou Agent vous convient le mieux.",
         },
       },
       second: {
@@ -339,14 +359,14 @@ export const dictionary = {
           fr: "02",
         },
         title: {
-          en: "Start driving activity",
-          ar: "ابدأ في توليد النشاط",
-          fr: "Commencez à générer de l’activité",
+          en: "Set up your code or local workflow",
+          ar: "جهز كودك أو آلية العمل المحلية",
+          fr: "Mettez en place votre code ou votre workflow local",
         },
         text: {
-          en: "Move with a clearer system, direct momentum, and a setup built for mobile-first attention.",
-          ar: "تحرك عبر نظام أوضح وزخم مباشر وإعداد مصمم ليلائم انتباه المستخدم على الهاتف أولًا.",
-          fr: "Avancez avec un système plus clair, un élan direct et une configuration pensée pour capter l’attention sur mobile en priorité.",
+          en: "Prepare the promo code, materials, or local payment flow you will use from day one.",
+          ar: "جهز الكود الترويجي أو المواد أو مسار الدفع المحلي الذي ستعمل به من اليوم الأول.",
+          fr: "Preparez le code promo, les supports ou le flux de paiement local que vous utiliserez des le premier jour.",
         },
       },
       third: {
@@ -356,187 +376,245 @@ export const dictionary = {
           fr: "03",
         },
         title: {
-          en: "Grow your earnings",
-          ar: "نمِّ أرباحك",
-          fr: "Développez vos gains",
+          en: "Start tracking activity and grow",
+          ar: "ابدأ المتابعة ووسّع نشاطك",
+          fr: "Commencez le suivi et developpez votre activite",
         },
         text: {
-          en: "As your activity grows, your results and earning potential grow with it.",
-          ar: "كلما نما نشاطك، تنمو معه نتائجك وإمكانية أرباحك.",
-          fr: "À mesure que votre activité grandit, vos résultats et votre potentiel de gains grandissent avec elle.",
+          en: "Follow performance, stay close to the manager, and keep improving your results over time.",
+          ar: "تابع الأداء، وابق قريباً من المدير، وطوّر نتائجك خطوة بعد خطوة.",
+          fr: "Suivez la performance, restez proche du manager et ameliorez vos resultats avec le temps.",
         },
       },
     },
   },
-  whyUs: {
 
+  whyUs: {
     eyebrow: {
-      en: "WHY US",
-      ar: "لماذا نحن",
-      fr: "POURQUOI NOUS",
+      en: "Tools and support",
+      ar: "الأدوات والدعم",
+      fr: "Outils et support",
     },
     title: {
-      en: "See your growth in motion",
-      ar: "شاهد نموك بشكل حي",
-      fr: "Voyez votre croissance en mouvement",
+      before: {
+        en: "Work with",
+        ar: "اعمل مع",
+        fr: "Travaillez avec",
+      },
+      glow: {
+        en: "tracking",
+        ar: "تتبع",
+        fr: "du suivi",
+      },
+      after: {
+        en: "and direct support",
+        ar: "ودعم مباشر",
+        fr: "et un support direct",
+      },
     },
     text: {
-      en: "A live-style dashboard that reflects how your activity turns into real progress over time.",
-      ar: "لوحة تحكم حية تعكس كيف يتحول نشاطك إلى تقدم حقيقي مع الوقت.",
-      fr: "Un tableau de bord au style direct qui reflète la manière dont votre activité se transforme en progression réelle au fil du temps.",
-
+      en: "Use a private code, manager follow-up, weekly reporting, and onboarding that keeps the next step clear.",
+      ar: "استفد من كود خاص، ومتابعة من المدير، وتقارير أسبوعية، وخطوات بدء تجعل المرحلة التالية واضحة.",
+      fr: "Travaillez avec un code prive, le suivi d'un manager, des rapports hebdomadaires et un demarrage qui garde la prochaine etape claire.",
     },
-
+    browserLabel: {
+      en: "Affiliate workspace",
+      ar: "مساحة الشركاء",
+      fr: "Espace partenaire",
+    },
     topStats: {
-      activePlayers: {
-        en: "Active players",
-        ar: "اللاعبون النشطون",
-        fr: "Joueurs actifs",
+      one: {
+        label: {
+          en: "Private promo code",
+          ar: "كود ترويجي خاص",
+          fr: "Code promo prive",
+        },
+        value: {
+          en: "Ready",
+          ar: "جاهز",
+          fr: "Pret",
+        },
       },
-      totalEarnings: {
-        en: "Total earnings",
-        ar: "إجمالي الأرباح",
-        fr: "Gains totaux",
+      two: {
+        label: {
+          en: "Manager support",
+          ar: "دعم المدير",
+          fr: "Support manager",
+        },
+        value: {
+          en: "Direct",
+          ar: "مباشر",
+          fr: "Direct",
+        },
       },
-      totalPlayers: {
-        en: "Total players",
-        ar: "إجمالي اللاعبين",
-        fr: "Total des joueurs",
+      three: {
+        label: {
+          en: "Weekly reporting",
+          ar: "تقارير أسبوعية",
+          fr: "Rapports hebdo",
+        },
+        value: {
+          en: "Active",
+          ar: "نشط",
+          fr: "Actif",
+        },
       },
-      revshare: {
-        en: "Revshare",
-        ar: "نسبة الأرباح",
-        fr: "Partage des revenus",
+      four: {
+        label: {
+          en: "Deal options",
+          ar: "خيارات الاتفاق",
+          fr: "Options d'accord",
+        },
+        value: {
+          en: "Flexible",
+          ar: "مرنة",
+          fr: "Flexibles",
+        },
       },
     },
     dashboardTag: {
-      en: "Weekly report",
-      ar: "",
-      fr: "Rapport hebdomadaire",
+      en: "Support overview",
+      ar: "نظرة على الدعم",
+      fr: "Vue support",
     },
     dashboardTitle: {
-      en: "Weekly performance",
-      ar: "الأداء الأسبوعي",
-      fr: "Performance hebdomadaire",
+      en: "Tools that help you start and scale",
+      ar: "أدوات تساعدك على البدء والتوسع",
+      fr: "Des outils pour commencer et grandir",
     },
     mini: {
-      newPlayers: {
-        en: "New players",
-        ar: "اللاعبون الجدد",
-        fr: "Nouveaux joueurs",
+      one: {
+        label: {
+          en: "Onboarding",
+          ar: "خطوات البدء",
+          fr: "Demarrage",
+        },
+        value: {
+          en: "Clear",
+          ar: "واضح",
+          fr: "Clair",
+        },
       },
-      weeklyVolume: {
-        en: "Weekly volume",
-        ar: "الحجم الأسبوعي",
-        fr: "Volume hebdomadaire",
+      two: {
+        label: {
+          en: "Marketing tools",
+          ar: "أدوات التسويق",
+          fr: "Outils marketing",
+        },
+        value: {
+          en: "Ready",
+          ar: "جاهزة",
+          fr: "Prets",
+        },
       },
-      conversionRate: {
-        en: "Conversion rate",
-        ar: "معدل التحويل",
-        fr: "Taux de conversion",
+      three: {
+        label: {
+          en: "Local support",
+          ar: "دعم محلي",
+          fr: "Support local",
+        },
+        value: {
+          en: "Direct",
+          ar: "مباشر",
+          fr: "Direct",
+        },
       },
-      regionalReach: {
-        en: "Regional reach",
-        ar: "الانتشار الإقليمي",
-        fr: "Portée régionale",
+      four: {
+        label: {
+          en: "Tracking",
+          ar: "التتبع",
+          fr: "Suivi",
+        },
+        value: {
+          en: "Live",
+          ar: "مباشر",
+          fr: "Live",
+        },
       },
     },
     bars: {
-      structure: {
-        en: "Structure clarity",
-        ar: "وضوح الهيكل",
-        fr: "Clarté de la structure",
+      one: {
+        label: {
+          en: "Onboarding clarity",
+          ar: "وضوح البداية",
+          fr: "Clarite du demarrage",
+        },
+        value: 88,
       },
-      reach: {
-        en: "Market reach",
-        ar: "قوة الوصول",
-        fr: "Portée du marché",
+      two: {
+        label: {
+          en: "Tracking access",
+          ar: "سهولة التتبع",
+          fr: "Acces au suivi",
+        },
+        value: 84,
       },
-      expansion: {
-        en: "Expansion capacity",
-        ar: "قابلية التوسع",
-        fr: "Capacité d’expansion",
+      three: {
+        label: {
+          en: "Manager support",
+          ar: "دعم المدير",
+          fr: "Support manager",
+        },
+        value: 91,
       },
     },
   },
 
-finalCta: {
-  eyebrow: {
-    en: "Let's talk",
-    ar: "لنتحدث",
-    fr: "Parlons-en",
-  },
-  title: {
-    before: {
-      en: "Ready to build something",
-      ar: "جاهز",
-      fr: "Prêt à construire quelque chose de",
+  finalCta: {
+    eyebrow: {
+      en: "Contact",
+      ar: "تواصل",
+      fr: "Contact",
     },
-    glow: {
-      en: "strong",
-      ar: "لبناء شيء قوي",
-      fr: "solide",
+    title: {
+      before: {
+        en: "Ready to start the",
+        ar: "جاهز لبدء",
+        fr: "Pret a lancer la",
+      },
+      glow: {
+        en: "right route",
+        ar: "المسار المناسب",
+        fr: "bonne voie",
+      },
+      after: {
+        en: "for you?",
+        ar: "لك؟",
+        fr: "pour vous ?",
+      },
     },
-    after: {
-      en: "together?",
-      ar: "معنا؟",
-      fr: "ensemble ?",
+    text: {
+      en: "Talk to us on Telegram or WhatsApp and we will help you choose the right route, explain the next steps, and get started clearly.",
+      ar: "تواصل معنا عبر تيليجرام أو واتساب وسنساعدك على اختيار المسار المناسب وشرح الخطوات التالية والبدء بشكل واضح.",
+      fr: "Parlez avec nous sur Telegram ou WhatsApp et nous vous aiderons a choisir la bonne voie, comprendre la suite et commencer clairement.",
+    },
+    supportItems: {
+      en: ["Clear next steps", "Direct manager reply", "Simple onboarding"],
+      ar: ["خطوات واضحة", "رد مباشر من المدير", "بدء بسيط"],
+      fr: ["Etapes claires", "Reponse directe du manager", "Demarrage simple"],
+    },
+    telegramCta: {
+      en: "Talk on Telegram",
+      ar: "تواصل عبر تيليجرام",
+      fr: "Parler sur Telegram",
+    },
+    whatsappCta: {
+      en: "Talk on WhatsApp",
+      ar: "تواصل عبر واتساب",
+      fr: "Parler sur WhatsApp",
     },
   },
-  text: {
-    en: "If the opportunity feels right, reach out on the channel you prefer and we'll help you take the next step clearly.",
-    ar: "إذا بدت لك الفرصة مناسبة، تواصل معنا عبر القناة التي تفضلها وسنساعدك على بدء الخطوة التالية بشكل واضح.",
-    fr: "Si l'opportunité vous parle, contactez-nous sur le canal qui vous convient et nous vous aiderons à avancer simplement.",
-  },
-  telegramCta: {
-    en: "Talk on Telegram",
-    ar: "تواصل عبر تيليجرام",
-    fr: "Parler sur Telegram",
-  },
-  whatsappCta: {
-    en: "Chat on WhatsApp",
-    ar: "تواصل عبر واتساب",
-    fr: "Discuter sur WhatsApp",
-  },
-},
 
   footer: {
     brand: {
       en: "Melbet Algeria",
       ar: "ميلبيت الجزائر",
-      fr: "Melbet Algérie",
-    },
-    text: {
-      en: "A modern partnership page built with clearer structure, stronger trust, and a mobile-first flow.",
-      ar: "صفحة شراكة حديثة مبنية بهيكل أوضح، وثقة أقوى، وتدفق مصمم للهاتف أولًا.",
-      fr: "Une page de partenariat moderne construite avec une structure plus claire, une confiance plus forte et un flux pensé d’abord pour le mobile.",
-    },
-    links: {
-      home: {
-        en: "Home",
-        ar: "الرئيسية",
-        fr: "Accueil",
-      },
-      partnership: {
-        en: "Partnership",
-        ar: "الشراكة",
-        fr: "Partenariat",
-      },
-      getStarted: {
-        en: "Get Started",
-        ar: "ابدأ الآن",
-        fr: "Commencer",
-      },
+      fr: "Melbet Algerie",
     },
     copyright: {
       en: "© 2026 Melbet Algeria. All rights reserved.",
       ar: "© 2026 ميلبيت الجزائر. جميع الحقوق محفوظة.",
-      fr: "© 2026 Melbet Algérie. Tous droits réservés.",
-    },
-    tagline: {
-      en: "Clear structure. Strong direction.",
-      ar: "هيكل واضح. اتجاه أقوى.",
-      fr: "Structure claire. Direction forte.",
+      fr: "© 2026 Melbet Algerie. Tous droits reserves.",
     },
   },
 };

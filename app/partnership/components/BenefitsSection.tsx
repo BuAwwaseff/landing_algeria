@@ -9,106 +9,105 @@ type BenefitVisualKey = "route" | "mobile" | "reporting";
 
 const content = {
   en: {
-    eyebrow: "Partnership benefits",
+    eyebrow: "Benefits",
     title: (
       <>
-        Built for <span className="glow-green">local growth</span>, not noise
+        Get the <span className="glow-green">tools and support</span> you need to start
       </>
     ),
-    text: "A cleaner commercial setup for people who want a direct path, clear materials, and a serious mobile-first presentation.",
+    text: "Choose the route that fits you, work with ready materials, and stay close to a manager from your first step.",
     cards: [
       {
         key: "route" as BenefitVisualKey,
-        title: "Clear route",
-        text: "Choose an agent route or an affiliate partner model with expectations explained before you start.",
+        title: "Partner or Agent",
+        text: "Start with the route that matches your audience, your city, and your payment access.",
       },
       {
         key: "mobile" as BenefitVisualKey,
-        title: "Mobile-first assets",
-        text: "Use sharp landing flows, direct CTA paths, and lightweight content made for phone traffic.",
+        title: "Marketing tools",
+        text: "Use promo codes, landing pages, banners, and direct CTA assets built for action.",
       },
       {
         key: "reporting" as BenefitVisualKey,
-        title: "Reporting rhythm",
-        text: "Track activity through simple weekly views that make progress easier to understand.",
+        title: "Tracking and follow-up",
+        text: "Stay close to clicks, signups, and player activity with clear reports and manager support.",
       },
     ],
   },
   fr: {
-    eyebrow: "Avantages du partenariat",
+    eyebrow: "Avantages",
     title: (
       <>
-        Concu pour une <span className="glow-green">croissance locale</span>
+        Obtenez les <span className="glow-green">outils et le support</span> utiles pour commencer
       </>
     ),
-    text: "Une structure commerciale plus claire pour avancer avec des supports nets, un parcours direct et une presentation mobile serieuse.",
+    text: "Choisissez la voie qui vous convient, travaillez avec des supports prets, et restez proche d'un manager des le depart.",
     cards: [
       {
         key: "route" as BenefitVisualKey,
-        title: "Parcours clair",
-        text: "Choisissez la route agent ou le modele affiliate partner avec des attentes expliquees des le depart.",
+        title: "Partner ou Agent",
+        text: "Commencez avec la voie qui correspond a votre audience, votre ville et votre acces au paiement.",
       },
       {
         key: "mobile" as BenefitVisualKey,
-        title: "Assets mobile-first",
-        text: "Utilisez des parcours courts, des CTA directs et du contenu leger pense pour le trafic mobile.",
+        title: "Outils marketing",
+        text: "Utilisez des codes promo, landing pages, bannieres et CTA directs deja prets pour l'action.",
       },
       {
         key: "reporting" as BenefitVisualKey,
-        title: "Suivi regulier",
-        text: "Lisez l'activite avec des vues hebdomadaires simples pour comprendre la progression.",
+        title: "Suivi et accompagnement",
+        text: "Restez proche des clics, inscriptions et de l'activite des joueurs avec des rapports clairs et le support du manager.",
       },
     ],
   },
   ar: {
-    eyebrow: "\u0645\u0632\u0627\u064A\u0627 \u0627\u0644\u0634\u0631\u0627\u0643\u0629",
+    eyebrow: "المزايا",
     title: (
       <>
-        {"\u0645\u0635\u0645\u0645\u0629 \u0644\u0646\u0645\u0648 "}
-        <span className="glow-green">
-          {"\u0645\u062D\u0644\u064A \u0648\u0627\u0636\u062D"}
-        </span>
+        احصل على <span className="glow-green">الأدوات والدعم</span> الذي تحتاجه لتبدأ
       </>
     ),
-    text: "\u0646\u0645\u0648\u0630\u062C \u062A\u062C\u0627\u0631\u064A \u0623\u0648\u0636\u062D \u0644\u0645\u0646 \u064A\u0631\u064A\u062F \u0645\u0633\u0627\u0631\u0627 \u0645\u0628\u0627\u0634\u0631\u0627\u060C \u0645\u0648\u0627\u062F \u0645\u0646\u0638\u0645\u0629\u060C \u0648\u062A\u062C\u0631\u0628\u0629 \u0645\u0648\u0628\u0627\u064A\u0644 \u062C\u062F\u064A\u0629 \u0648\u0633\u0647\u0644\u0629 \u0627\u0644\u0641\u0647\u0645.",
+    text: "اختر المسار الذي يناسبك، واعمل بمواد جاهزة، وابق قريباً من المدير منذ أول خطوة.",
     cards: [
       {
         key: "route" as BenefitVisualKey,
-        title: "\u0645\u0633\u0627\u0631 \u0648\u0627\u0636\u062D",
-        text: "\u0627\u062E\u062A\u0631 \u0645\u0633\u0627\u0631 \u0627\u0644\u0648\u0643\u064A\u0644 \u0623\u0648 \u0646\u0645\u0648\u0630\u062C \u0634\u0631\u064A\u0643 \u0627\u0644\u062A\u0633\u0648\u064A\u0642 \u0645\u0639 \u062A\u0648\u0636\u064A\u062D \u0627\u0644\u062A\u0648\u0642\u0639\u0627\u062A \u0645\u0646 \u0627\u0644\u0628\u062F\u0627\u064A\u0629.",
+        title: "شريك أو وكيل",
+        text: "ابدأ بالمسار الذي يناسب جمهورك ومدينتك وقدرتك على إدارة الدفع.",
       },
       {
         key: "mobile" as BenefitVisualKey,
-        title: "\u0645\u0648\u0627\u062F \u0644\u0644\u0645\u0648\u0628\u0627\u064A\u0644",
-        text: "\u0627\u0633\u062A\u062E\u062F\u0645 \u0635\u0641\u062D\u0627\u062A \u0633\u0631\u064A\u0639\u0629 \u0648\u062F\u0639\u0648\u0627\u062A \u0625\u062C\u0631\u0627\u0621 \u0645\u0628\u0627\u0634\u0631\u0629 \u0648\u0645\u062D\u062A\u0648\u0649 \u062E\u0641\u064A\u0641 \u0645\u0646\u0627\u0633\u0628 \u0644\u062D\u0631\u0643\u0629 \u0627\u0644\u0647\u0627\u062A\u0641.",
+        title: "أدوات تسويق",
+        text: "استخدم أكواداً ترويجية وصفحات هبوط وبانرات ودعوات إجراء مباشرة جاهزة للعمل.",
       },
       {
         key: "reporting" as BenefitVisualKey,
-        title: "\u0645\u062A\u0627\u0628\u0639\u0629 \u0645\u0646\u062A\u0638\u0645\u0629",
-        text: "\u062A\u0627\u0628\u0639 \u0627\u0644\u0646\u0634\u0627\u0637 \u0645\u0646 \u062E\u0644\u0627\u0644 \u0639\u0631\u0648\u0636 \u0623\u0633\u0628\u0648\u0639\u064A\u0629 \u0628\u0633\u064A\u0637\u0629 \u062A\u062C\u0639\u0644 \u0627\u0644\u062A\u0642\u062F\u0645 \u0623\u0633\u0647\u0644 \u0641\u064A \u0627\u0644\u0642\u0631\u0627\u0621\u0629.",
+        title: "متابعة ودعم",
+        text: "ابق قريباً من الضغطات والتسجيلات ونشاط اللاعبين عبر تقارير واضحة ودعم من المدير.",
       },
     ],
   },
-};
+} as const;
 
 function BenefitVisual({ kind }: { kind: BenefitVisualKey }) {
+  const { language, t } = useLanguage();
+
   if (kind === "route") {
     return (
       <div className="relative h-[104px] overflow-hidden rounded-[20px] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.016))]">
         <div className="absolute left-5 top-1/2 h-px w-[calc(100%-40px)] -translate-y-1/2 bg-gradient-to-r from-[#2BB673]/0 via-[#2BB673]/44 to-[#F44336]/0" />
-        <div className="absolute left-5 top-1/2 flex h-12 w-20 -translate-y-1/2 items-center justify-center rounded-[16px] border border-[#2BB673]/24 bg-[#2BB673]/10 shadow-[0_10px_24px_rgba(43,182,115,0.12)]">
+        <div className="absolute left-5 top-1/2 flex h-12 w-24 -translate-y-1/2 items-center justify-center rounded-[16px] border border-[#2BB673]/24 bg-[#2BB673]/10 shadow-[0_10px_24px_rgba(43,182,115,0.12)]">
           <div className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-[#2BB673] shadow-[0_0_12px_rgba(43,182,115,0.35)]" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/52">
-              agent
+              {t.paths.agent.side[language]}
             </span>
           </div>
         </div>
-        <div className="absolute right-5 top-1/2 flex h-12 w-20 -translate-y-1/2 items-center justify-center rounded-[16px] border border-white/10 bg-white/[0.04]">
+        <div className="absolute right-5 top-1/2 flex h-12 w-24 -translate-y-1/2 items-center justify-center rounded-[16px] border border-white/10 bg-white/[0.04]">
           <div className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-white/35" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/52">
-              partner
+              {t.paths.partner.side[language]}
             </span>
           </div>
         </div>
@@ -131,8 +130,6 @@ function BenefitVisual({ kind }: { kind: BenefitVisualKey }) {
           </div>
           <div className="absolute inset-x-3 bottom-3 h-2 rounded-full bg-[linear-gradient(90deg,#2BB673_0%,#D9D24A_100%)] shadow-[0_0_14px_rgba(43,182,115,0.16)]" />
         </div>
-        <div className="absolute left-4 top-4 h-3 w-10 rounded-full bg-white/8" />
-        <div className="absolute right-4 bottom-4 h-3 w-14 rounded-full bg-[#2BB673]/18" />
       </div>
     );
   }
@@ -160,9 +157,6 @@ function BenefitVisual({ kind }: { kind: BenefitVisualKey }) {
       <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-[#2BB673]/22 bg-[#2BB673]/10 text-[12px] font-semibold text-[#2BB673] animate-[stepPulse_3.2s_ease-in-out_infinite]">
         +
       </div>
-      <div className="absolute inset-x-4 bottom-4 h-2 overflow-hidden rounded-full bg-white/8">
-        <div className="h-full w-[72%] rounded-full bg-[linear-gradient(90deg,#2BB673_0%,#D9D24A_100%)] shadow-[0_0_14px_rgba(43,182,115,0.16)] animate-[stepFlow_3.2s_ease-in-out_infinite]" />
-      </div>
     </div>
   );
 }
@@ -182,8 +176,7 @@ function BenefitCard({
     <InteractiveTiltCard className="h-full">
       <div className="group relative flex h-full min-h-[286px] flex-col overflow-hidden rounded-[24px] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.038),rgba(255,255,255,0.014))] p-5 shadow-[0_18px_44px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.04)] transition duration-300 group-hover:border-white/12 sm:p-6">
         <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-[#2BB673]/35 to-transparent" />
-        <div className="pointer-events-none absolute end-0 top-0 h-24 w-24 bg-[#2BB673]/[0.05] blur-2xl transition duration-300 group-hover:bg-[#2BB673]/[0.08]" />
-        <div className="pointer-events-none absolute -left-8 bottom-0 h-20 w-20 rounded-full bg-[#F44336]/[0.04] blur-2xl transition duration-300 group-hover:bg-[#F44336]/[0.06]" />
+        <div className="pointer-events-none absolute end-0 top-0 h-24 w-24 bg-[#2BB673]/[0.05] blur-2xl" />
 
         <div className="flex items-center justify-between gap-3">
           <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/34">
@@ -212,17 +205,10 @@ export default function BenefitsSection() {
   const copy = content[language];
 
   return (
-    <section
-      id="benefits"
-      className="relative px-4 py-12 sm:px-8 sm:py-14 lg:px-12"
-    >
+    <section id="benefits" className="relative px-4 py-12 sm:px-8 sm:py-14 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <StaggerReveal amount={0.16}>
-          <SectionHeading
-            eyebrow={copy.eyebrow}
-            title={copy.title}
-            text={copy.text}
-          />
+          <SectionHeading eyebrow={copy.eyebrow} title={copy.title} text={copy.text} />
 
           <div className="mt-10 grid gap-4 md:auto-rows-fr md:grid-cols-3">
             {copy.cards.map((card, index) => (

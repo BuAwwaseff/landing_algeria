@@ -19,7 +19,7 @@ function InteractiveSurface({
   const ref = useRef<HTMLDivElement | null>(null);
   const [glow, setGlow] = useState({ x: 50, y: 50, active: false });
   const [transform, setTransform] = useState(
-    "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)"
+    "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)",
   );
 
   const handleMove = (event: MouseEvent<HTMLDivElement>) => {
@@ -30,7 +30,7 @@ function InteractiveSurface({
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
-    const rotateY = ((x / rect.width) - 0.5) * tilt;
+    const rotateY = (x / rect.width - 0.5) * tilt;
     const rotateX = (0.5 - y / rect.height) * tilt;
 
     setGlow({
@@ -40,14 +40,14 @@ function InteractiveSurface({
     });
 
     setTransform(
-      `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`
+      `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`,
     );
   };
 
   const handleLeave = () => {
     setGlow((prev) => ({ ...prev, active: false }));
     setTransform(
-      "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)"
+      "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)",
     );
   };
 
@@ -97,7 +97,7 @@ function MiniPointCard({
   );
 }
 
-function EarningsBlock({
+function SummaryBlock({
   primaryLabel,
   primaryValue,
   secondaryLabel,
@@ -115,7 +115,7 @@ function EarningsBlock({
         <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/42">
           {primaryLabel}
         </div>
-        <div className="mt-2 text-[26px] font-semibold tracking-[-0.05em] text-[#2BB673]">
+        <div className="mt-2 text-[24px] font-semibold tracking-[-0.05em] text-[#2BB673]">
           {primaryValue}
         </div>
       </div>
@@ -184,7 +184,7 @@ function PathCard({
               {text}
             </p>
 
-            <EarningsBlock
+            <SummaryBlock
               primaryLabel={primaryLabel}
               primaryValue={primaryValue}
               secondaryLabel={secondaryLabel}
@@ -192,7 +192,7 @@ function PathCard({
             />
           </div>
 
-          <div className="mt- grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-2">
             <Link
               href={ctaHref}
               className="lp-button inline-flex min-h-[54px] w-full items-center justify-center rounded-[15px] border border-[#2BB673]/28 bg-[#2BB673] px-5 py-3 text-center text-[#04110b] shadow-[0_14px_30px_rgba(43,182,115,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#39C884]"
@@ -220,7 +220,7 @@ function PathCard({
 
 export default function PathsSection() {
   const { language, t } = useLanguage();
-  const isArabic = language === "ar";
+
   const title = (
     <>
       {t.paths.title.before[language]}{" "}
@@ -249,12 +249,10 @@ export default function PathsSection() {
                 ctaHref="#final-cta"
                 secondaryCta={t.paths.agent.secondaryCta[language]}
                 secondaryHref="#steps"
-                primaryLabel={isArabic ? "نسبة الوكيل" : "Agent rate"}
-                primaryValue="5%–10%"
-                secondaryLabel={isArabic ? "نوع الصفقة" : "Deal type"}
-                secondaryValue={
-                  isArabic ? "عمولة على المعاملات" : "Transaction-based commission"
-                }
+                primaryLabel={t.paths.agent.summaryPrimaryLabel[language]}
+                primaryValue={t.paths.agent.summaryPrimaryValue[language]}
+                secondaryLabel={t.paths.agent.summarySecondaryLabel[language]}
+                secondaryValue={t.paths.agent.summarySecondaryValue[language]}
                 pointA={{
                   title: t.paths.agent.pointA.title[language],
                   text: t.paths.agent.pointA.text[language],
@@ -275,12 +273,10 @@ export default function PathsSection() {
                 ctaHref="#final-cta"
                 secondaryCta={t.paths.partner.secondaryCta[language]}
                 secondaryHref="#steps"
-                primaryLabel={isArabic ? "نسبة الشريك" : "Partner rate"}
-                primaryValue="25%–35%"
-                secondaryLabel={isArabic ? "الخيارات" : "Options"}
-                secondaryValue={
-                  isArabic ? "Revshare + Hybrid deals" : "Revshare + hybrid deals"
-                }
+                primaryLabel={t.paths.partner.summaryPrimaryLabel[language]}
+                primaryValue={t.paths.partner.summaryPrimaryValue[language]}
+                secondaryLabel={t.paths.partner.summarySecondaryLabel[language]}
+                secondaryValue={t.paths.partner.summarySecondaryValue[language]}
                 pointA={{
                   title: t.paths.partner.pointA.title[language],
                   text: t.paths.partner.pointA.text[language],

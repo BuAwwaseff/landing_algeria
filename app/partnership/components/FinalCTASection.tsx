@@ -8,12 +8,6 @@ import { FadeUp, StaggerReveal } from "@/app/motion/Reveal";
 const TELEGRAM_LINK = "#";
 const WHATSAPP_LINK = "#";
 
-const supportItems = {
-  en: ["Clear next steps", "Fast first reply", "Simple setup"],
-  ar: ["خطوات واضحة", "رد أول سريع", "إعداد بسيط"],
-  fr: ["Étapes claires", "Première réponse rapide", "Mise en place simple"],
-} as const;
-
 function LiveDot() {
   return (
     <span
@@ -46,7 +40,6 @@ function ContactButton({
           height={20}
           className="h-5 w-5 shrink-0 object-contain"
         />
-
         <span className="lp-button whitespace-nowrap leading-[1.35]">
           {label}
         </span>
@@ -69,10 +62,7 @@ export default function FinalCtaSection() {
   );
 
   return (
-    <section
-      id="final-cta"
-      className="relative px-4 pb-24 pt-4 sm:px-8 lg:px-12"
-    >
+    <section id="final-cta" className="relative px-4 pb-24 pt-4 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-5xl">
         <StaggerReveal
           amount={0.18}
@@ -105,7 +95,7 @@ export default function FinalCtaSection() {
 
             <FadeUp>
               <div className="mx-auto mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
-                {supportItems[language].map((item, index) => (
+                {t.finalCta.supportItems[language].map((item, index) => (
                   <div
                     key={item}
                     className="rounded-[18px] border border-white/8 bg-black/18 p-4 text-start shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"

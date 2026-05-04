@@ -1,326 +1,63 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/app/layout/LanguageProvider";
 import { FadeUp, StaggerReveal } from "@/app/motion/Reveal";
 
-function CountUp({
-  end,
-  suffix = "",
-  duration = 1400,
-  startWhenVisible = false,
-}: {
-  end: number;
-  suffix?: string;
-  duration?: number;
-  startWhenVisible?: boolean;
-}) {
-  const [value, setValue] = useState(0);
-  const [started, setStarted] = useState(!startWhenVisible);
-  const ref = useRef<HTMLSpanElement | null>(null);
-
-  useEffect(() => {
-    if (!startWhenVisible || started) return;
-    const node = ref.current;
-    if (!node) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-        setStarted(true);
-        observer.disconnect();
-      },
-      { threshold: 0.35 }
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [startWhenVisible, started]);
-
-  useEffect(() => {
-    if (!started) return;
-
-    let frame = 0;
-    const totalFrames = Math.max(24, Math.round(duration / 16));
-
-    const timer = window.setInterval(() => {
-      frame += 1;
-      const progress = frame / totalFrames;
-      const eased = 1 - Math.pow(1 - Math.min(progress, 1), 3);
-      setValue(Math.round(end * eased));
-
-      if (frame >= totalFrames) {
-        window.clearInterval(timer);
-      }
-    }, 16);
-
-    return () => window.clearInterval(timer);
-  }, [duration, end, started]);
-
-  return (
-    <span ref={ref}>
-      {value.toLocaleString()}
-      {suffix}
-    </span>
-  );
-}
-
-function AnimatedOverallBar({
-  width,
-  delay = 0,
-}: {
-  width: number;
-  delay?: number;
-}) {
-  const [currentWidth, setCurrentWidth] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node || hasStarted) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-
-        setHasStarted(true);
-
-        const timer = window.setTimeout(() => {
-          setCurrentWidth(width);
-        }, delay);
-
-        observer.disconnect();
-
-        return () => window.clearTimeout(timer);
-      },
-      { threshold: 0.35 }
-    );
-
-    observer.observe(node);
-
-    return () => observer.disconnect();
-  }, [width, delay, hasStarted]);
-
-  return (
-    <div
-      ref={ref}
-      className="relative h-[6px] w-full overflow-hidden rounded-full bg-white/10"
-    >
-      <div
-        className="absolute left-0 top-0 h-full rounded-full bg-[linear-gradient(90deg,#2BB673_0%,#D9D24A_45%,#F44336_100%)] transition-[width] duration-1000 ease-out"
-        style={{ width: `${currentWidth}%` }}
-      />
-    </div>
-  );
-}
-
-function TopStat({
+function StatCard({
   value,
   label,
-  barWidth,
-  barDelay = 0,
 }: {
   value: string;
   label: string;
-  barWidth: number;
-  barDelay?: number;
 }) {
-  const cardRef = useRef<HTMLDivElement | null>(null);
-  const [glow, setGlow] = useState({ x: 50, y: 50, active: false });
-  const [transform, setTransform] = useState(
-    "perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)"
-  );
-
-  const handleMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    const node = cardRef.current;
-    if (!node) return;
-
-    const rect = node.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-
-    const rotateY = ((x / rect.width) - 0.5) * 8;
-    const rotateX = (0.5 - y / rect.height) * 8;
-
-    setGlow({
-      x: (x / rect.width) * 100,
-      y: (y / rect.height) * 100,
-      active: true,
-    });
-
-    setTransform(
-      `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`
-    );
-  };
-
-  const handleLeave = () => {
-    setGlow((prev) => ({ ...prev, active: false }));
-    setTransform(
-      "perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)"
-    );
-  };
-
   return (
-    <div
-      ref={cardRef}
-      onMouseMove={handleMove}
-      onMouseLeave={handleLeave}
-      className="group relative overflow-hidden rounded-[22px] border border-white/8 bg-white/[0.03] p-5 transition-transform duration-300 will-change-transform"
-      style={{ transform }}
-    >
-      <div
-        className="pointer-events-none absolute inset-0 transition-opacity duration-300"
-        style={{
-          background: `radial-gradient(circle at ${glow.x}% ${glow.y}%, rgba(43,182,115,0.18), rgba(255,255,255,0.04) 38%, transparent 72%)`,
-          opacity: glow.active ? 1 : 0,
-        }}
-      />
-
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent opacity-80" />
-
-      <div className="relative flex flex-col gap-3">
-        <div className="text-[34px] font-semibold tracking-[-0.05em] text-[#F5F7F4] sm:text-[40px]">
-          {value}
-        </div>
-
-        <div className="text-[15px] text-white/58 transition-colors duration-300 group-hover:text-white/74">
-          {label}
-        </div>
-
-        <AnimatedOverallBar width={barWidth} delay={barDelay} />
+    <div className="relative overflow-hidden rounded-[22px] border border-white/8 bg-white/[0.03] p-5 shadow-[0_18px_44px_rgba(0,0,0,0.22)]">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+      <div className="text-[32px] font-semibold tracking-[-0.05em] text-[#F5F7F4]">
+        {value}
       </div>
+      <div className="mt-3 text-[15px] text-white/60">{label}</div>
     </div>
   );
 }
 
-function ProgressBar({
+function MiniCard({
   label,
   value,
-  delay = 0,
+}: {
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="rounded-[18px] border border-white/8 bg-white/[0.03] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/38">
+        {label}
+      </p>
+      <p className="mt-2 text-[24px] font-semibold tracking-[-0.05em] text-[#F5F7F4]">
+        {value}
+      </p>
+    </div>
+  );
+}
+
+function ProgressRow({
+  label,
+  value,
 }: {
   label: string;
   value: number;
-  delay?: number;
 }) {
-  const [width, setWidth] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false);
-  const barRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const node = barRef.current;
-    if (!node || hasStarted) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-
-        setHasStarted(true);
-
-        const timer = window.setTimeout(() => {
-          setWidth(value);
-        }, delay);
-
-        observer.disconnect();
-
-        return () => window.clearTimeout(timer);
-      },
-      { threshold: 0.35 }
-    );
-
-    observer.observe(node);
-
-    return () => observer.disconnect();
-  }, [value, delay, hasStarted]);
-
   return (
-    <div ref={barRef}>
+    <div>
       <div className="mb-2 flex items-center justify-between text-[12px] text-white/52">
         <span>{label}</span>
-        <span>
-          <CountUp end={hasStarted ? value : 0} suffix="%" duration={1000} />
-        </span>
+        <span>{value}%</span>
       </div>
-
       <div className="h-2 rounded-full bg-white/8">
         <div
-          className="h-2 rounded-full bg-[#2BB673] shadow-[0_0_18px_rgba(43,182,115,0.28)] transition-[width] duration-1000 ease-out"
-          style={{ width: `${width}%` }}
+          className="h-2 rounded-full bg-[#2BB673] shadow-[0_0_18px_rgba(43,182,115,0.28)]"
+          style={{ width: `${value}%` }}
         />
-      </div>
-    </div>
-  );
-}
-
-function MiniMetric({
-  label,
-  value,
-  suffix,
-}: {
-  label: string;
-  value: number;
-  suffix?: string;
-}) {
-  const cardRef = useRef<HTMLDivElement | null>(null);
-  const [glow, setGlow] = useState({ x: 50, y: 50, active: false });
-  const [transform, setTransform] = useState(
-    "perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)"
-  );
-
-  const handleMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    const node = cardRef.current;
-    if (!node) return;
-
-    const rect = node.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-
-    const rotateY = ((x / rect.width) - 0.5) * 8;
-    const rotateX = (0.5 - y / rect.height) * 8;
-
-    setGlow({
-      x: (x / rect.width) * 100,
-      y: (y / rect.height) * 100,
-      active: true,
-    });
-
-    setTransform(
-      `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`
-    );
-  };
-
-  const handleLeave = () => {
-    setGlow((prev) => ({ ...prev, active: false }));
-    setTransform(
-      "perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)"
-    );
-  };
-
-  return (
-    <div
-      ref={cardRef}
-      onMouseMove={handleMove}
-      onMouseLeave={handleLeave}
-      className="group relative overflow-hidden rounded-[18px] border border-white/8 bg-white/[0.03] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] transition-transform duration-300 will-change-transform"
-      style={{ transform }}
-    >
-      <div
-        className="pointer-events-none absolute inset-0 transition-opacity duration-300"
-        style={{
-          background: `radial-gradient(circle at ${glow.x}% ${glow.y}%, rgba(43,182,115,0.18), rgba(255,255,255,0.04) 38%, transparent 72%)`,
-          opacity: glow.active ? 1 : 0,
-        }}
-      />
-
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent opacity-70" />
-
-      <div className="relative">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/38 transition-colors duration-300 group-hover:text-white/52">
-          {label}
-        </p>
-        <p className="mt-2 text-[26px] font-semibold tracking-[-0.05em] text-[#F5F7F4]">
-          <CountUp end={value} suffix={suffix} startWhenVisible />
-        </p>
       </div>
     </div>
   );
@@ -328,45 +65,6 @@ function MiniMetric({
 
 export default function WhyUs() {
   const { t, language } = useLanguage();
-
-  const sectionTitle =
-    language === "en" ? (
-      <>
-        See your <span className="glow-green">growth</span> in motion
-      </>
-    ) : language === "ar" ? (
-      <>
-        شاهد <span className="glow-green">نموك</span> بشكل حي
-      </>
-    ) : (
-      <>
-        Visualisez votre <span className="glow-green">croissance</span>
-      </>
-    );
-
-  const copy = {
-    eyebrow: t.whyUs.eyebrow[language],
-    text: t.whyUs.text[language],
-    topStats: {
-      activePlayers: t.whyUs.topStats.activePlayers[language],
-      totalEarnings: t.whyUs.topStats.totalEarnings[language],
-      totalPlayers: t.whyUs.topStats.totalPlayers[language],
-      revshare: t.whyUs.topStats.revshare[language],
-    },
-    dashboardTag: t.whyUs.dashboardTag[language],
-    dashboardTitle: t.whyUs.dashboardTitle[language],
-    mini: {
-      newPlayers: t.whyUs.mini.newPlayers[language],
-      weeklyVolume: t.whyUs.mini.weeklyVolume[language],
-      conversionRate: t.whyUs.mini.conversionRate[language],
-      regionalReach: t.whyUs.mini.regionalReach[language],
-    },
-    bars: {
-      structure: t.whyUs.bars.structure[language],
-      reach: t.whyUs.bars.reach[language],
-      expansion: t.whyUs.bars.expansion[language],
-    },
-  };
 
   return (
     <section id="tools" className="relative px-4 py-14 sm:px-8 sm:py-16 lg:px-12">
@@ -377,7 +75,7 @@ export default function WhyUs() {
               <div className="inline-flex items-center gap-3 text-[#2BB673]">
                 <span className="h-px w-8 bg-[#2BB673]/45" />
                 <span className="text-[13px] font-semibold uppercase tracking-[0.22em]">
-                  {copy.eyebrow}
+                  {t.whyUs.eyebrow[language]}
                 </span>
                 <span className="h-px w-8 bg-[#2BB673]/45" />
               </div>
@@ -385,43 +83,37 @@ export default function WhyUs() {
 
             <FadeUp>
               <h2 className="mt-5 text-[34px] font-semibold leading-[1.02] tracking-[-0.05em] text-[#F5F7F4] sm:text-[46px]">
-                {sectionTitle}
+                {t.whyUs.title.before[language]}{" "}
+                <span className="glow-green">{t.whyUs.title.glow[language]}</span>{" "}
+                {t.whyUs.title.after[language]}
               </h2>
             </FadeUp>
 
             <FadeUp>
               <p className="mx-auto mt-5 max-w-[60ch] text-[17px] leading-8 text-white/62">
-                {copy.text}
+                {t.whyUs.text[language]}
               </p>
             </FadeUp>
           </div>
 
           <FadeUp>
-            <div className="overflow-hidden rounded-[30px] border border-white/8 bg-[linear-gradient(90deg,rgba(43,182,115,0.06)_0%,rgba(255,255,255,0.02)_40%,rgba(244,67,54,0.06)_100%)] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.04)] sm:p-7">
+            <div className="mt-10 overflow-hidden rounded-[30px] border border-white/8 bg-[linear-gradient(90deg,rgba(43,182,115,0.06)_0%,rgba(255,255,255,0.02)_40%,rgba(244,67,54,0.06)_100%)] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] sm:p-7">
               <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
-                <TopStat
-                  value="+2,430"
-                  label={copy.topStats.activePlayers}
-                  barWidth={70}
-                  barDelay={100}
+                <StatCard
+                  value={t.whyUs.topStats.one.value[language]}
+                  label={t.whyUs.topStats.one.label[language]}
                 />
-                <TopStat
-                  value="$18,920"
-                  label={copy.topStats.totalEarnings}
-                  barWidth={70}
-                  barDelay={220}
+                <StatCard
+                  value={t.whyUs.topStats.two.value[language]}
+                  label={t.whyUs.topStats.two.label[language]}
                 />
-                <TopStat
-                  value="12,480"
-                  label={copy.topStats.totalPlayers}
-                  barWidth={74}
-                  barDelay={340}
+                <StatCard
+                  value={t.whyUs.topStats.three.value[language]}
+                  label={t.whyUs.topStats.three.label[language]}
                 />
-                <TopStat
-                  value="35%"
-                  label={copy.topStats.revshare}
-                  barWidth={68}
-                  barDelay={460}
+                <StatCard
+                  value={t.whyUs.topStats.four.value[language]}
+                  label={t.whyUs.topStats.four.label[language]}
                 />
               </div>
             </div>
@@ -437,7 +129,7 @@ export default function WhyUs() {
                 </div>
 
                 <div className="hidden items-center rounded-full bg-white/[0.04] px-4 py-1 text-[11px] text-white/40 sm:flex">
-                  melbet.algeria-partners.com
+                  {t.whyUs.browserLabel[language]}
                 </div>
 
                 <div className="w-[52px]" />
@@ -451,49 +143,50 @@ export default function WhyUs() {
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/38">
-                      {copy.dashboardTag}
+                      {t.whyUs.dashboardTag[language]}
                     </p>
                     <h3 className="mt-2 text-[28px] font-semibold tracking-[-0.04em] text-[#F5F7F4]">
-                      {copy.dashboardTitle}
+                      {t.whyUs.dashboardTitle[language]}
                     </h3>
                   </div>
 
                   <div className="text-[28px] font-semibold tracking-[-0.05em] text-[#2BB673]">
-                    <CountUp end={26} suffix="%" startWhenVisible />
+                    Live
                   </div>
                 </div>
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                  <MiniMetric label={copy.mini.newPlayers} value={248} />
-                  <MiniMetric
-                    label={copy.mini.weeklyVolume}
-                    value={184}
-                    suffix="K"
+                  <MiniCard
+                    label={t.whyUs.mini.one.label[language]}
+                    value={t.whyUs.mini.one.value[language]}
                   />
-                  <MiniMetric
-                    label={copy.mini.conversionRate}
-                    value={37}
-                    suffix="%"
+                  <MiniCard
+                    label={t.whyUs.mini.two.label[language]}
+                    value={t.whyUs.mini.two.value[language]}
                   />
-                  <MiniMetric label={copy.mini.regionalReach} value={12} />
+                  <MiniCard
+                    label={t.whyUs.mini.three.label[language]}
+                    value={t.whyUs.mini.three.value[language]}
+                  />
+                  <MiniCard
+                    label={t.whyUs.mini.four.label[language]}
+                    value={t.whyUs.mini.four.value[language]}
+                  />
                 </div>
 
                 <div className="mt-8 rounded-[24px] bg-white/[0.03] p-5">
                   <div className="space-y-4">
-                    <ProgressBar
-                      label={copy.bars.structure}
-                      value={84}
-                      delay={100}
+                    <ProgressRow
+                      label={t.whyUs.bars.one.label[language]}
+                      value={t.whyUs.bars.one.value}
                     />
-                    <ProgressBar
-                      label={copy.bars.reach}
-                      value={72}
-                      delay={250}
+                    <ProgressRow
+                      label={t.whyUs.bars.two.label[language]}
+                      value={t.whyUs.bars.two.value}
                     />
-                    <ProgressBar
-                      label={copy.bars.expansion}
-                      value={91}
-                      delay={400}
+                    <ProgressRow
+                      label={t.whyUs.bars.three.label[language]}
+                      value={t.whyUs.bars.three.value}
                     />
                   </div>
                 </div>
